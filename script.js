@@ -1,8 +1,16 @@
 class Traveler {
     constructor(name) {
-        this.name = name;
+        this._name = name;
         this.food = 1;
         this.isHealthy = true;
+    }
+
+    get name() {
+        return this._name
+    }
+
+    set name(name) {
+        this._name = name
     }
 
     hunt() {
@@ -21,9 +29,18 @@ class Traveler {
 
 class Wagon {
     constructor(capacity) {
-        this.capacity = capacity;
+        this._capacity = capacity;
         this.passageiros = [];
     }
+
+    get capacity() {
+        return this._capacity
+    }
+
+    set capacity(capacity) {
+        this._capacity = capacity
+    }
+
     getAvailableSeatCount() {
         return this.capacity - this.passageiros.length
     }
